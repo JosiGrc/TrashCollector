@@ -9,15 +9,25 @@ namespace TrashCollector.Models
     public class Customer
     {
         //Variables
+
+        //Ctor
         [Key]
         public int Id { get; set; }
+
+        [Display( Name = "First Name")]
         public string firstName { get; set; }
+
+        [Display(Name = "Last Name")]
         public string lastName { get; set; }
+
+        [Display(Name = "Address")]
         public string address { get; set; }
+
+        [Display(Name = "Zipcode")]
         public int zipcode { get; set; }
+
+        [Display(Name = "State")]
         public string state { get; set; }
-        public int phoneNumber { get; set; }
-        //Ctor
 
         //Methods
     }

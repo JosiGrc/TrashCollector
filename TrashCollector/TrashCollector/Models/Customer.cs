@@ -29,6 +29,9 @@ namespace TrashCollector.Models
         [Display(Name = "State")]
         public string state { get; set; }
 
+        [Display(Name = "E-Mail")]
+        public string email { get; set; }
+
         //Methods
     }
 }

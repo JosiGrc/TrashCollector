@@ -14,6 +14,7 @@ namespace TrashCollector.Models
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string userName { get; set; }
+        public int zipcode { get; set; }
 
         //ctor
 

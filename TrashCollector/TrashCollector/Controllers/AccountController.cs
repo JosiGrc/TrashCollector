@@ -162,6 +162,8 @@ namespace TrashCollector.Controllers
                 {
                     //take uswer to specific create page depending on the selected role
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+
                     if (model.UserRoles == "Customer")
                     {
                         return RedirectToAction("Create", "Customers");

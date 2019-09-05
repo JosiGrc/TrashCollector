@@ -43,7 +43,6 @@ namespace TrashCollector
                 role.Name = "Customer";
                 roleManager.Create(role);
             }
-
         }
     }
 }

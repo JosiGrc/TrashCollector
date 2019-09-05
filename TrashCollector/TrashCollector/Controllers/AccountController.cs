@@ -143,7 +143,7 @@ namespace TrashCollector.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin")).ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -160,13 +160,21 @@ namespace TrashCollector.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //take uswer to specific create page depending on the selected role
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    return RedirectToAction("Index", "Home");//if the user chooses the employee role take them to the create employee page or customer
+                    if (model.UserRoles == "Customer")
+                    {
+                        return RedirectToAction("Customer", "Create");
+                    }
+                    else if (model.UserRoles == "Employee")
+                    {
+                        return RedirectToAction("Employee", "Create");
+                    }
                 }
                 AddErrors(result);
             }
 
-            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin")).ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View(model);
         }
 
@@ -417,10 +425,8 @@ namespace TrashCollector.Controllers
                     _signInManager = null;
                 }
             }
-
             base.Dispose(disposing);
         }
-
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

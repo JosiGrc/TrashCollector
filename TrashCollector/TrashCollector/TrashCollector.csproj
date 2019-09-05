@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201909042008563_FourthMigration.Designer.cs">
       <DependentUpon>201909042008563_FourthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.cs" />
+    <Compile Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.Designer.cs">
+      <DependentUpon>201909051931394_adding-foreignkey-to-both-tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909042008563_FourthMigration.resx">
       <DependentUpon>201909042008563_FourthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.resx">
+      <DependentUpon>201909051931394_adding-foreignkey-to-both-tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

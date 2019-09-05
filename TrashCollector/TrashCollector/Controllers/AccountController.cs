@@ -164,11 +164,11 @@ namespace TrashCollector.Controllers
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     if (model.UserRoles == "Customer")
                     {
-                        return RedirectToAction("Customer", "Create");
+                        return RedirectToAction("Create", "Customers");
                     }
                     else if (model.UserRoles == "Employee")
                     {
-                        return RedirectToAction("Employee", "Create");
+                        return RedirectToAction("Create", "Employees");
                     }
                 }
                 AddErrors(result);

@@ -207,6 +207,18 @@
     <Compile Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.Designer.cs">
       <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.cs" />
+    <Compile Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.Designer.cs">
+      <DependentUpon>201909061549115_added-enum-to-both-customer-and-employee-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061556014_gave-enum-values.cs" />
+    <Compile Include="Migrations\201909061556014_gave-enum-values.Designer.cs">
+      <DependentUpon>201909061556014_gave-enum-values.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061604364_changed-enum.cs" />
+    <Compile Include="Migrations\201909061604364_changed-enum.Designer.cs">
+      <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -323,6 +335,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.resx">
       <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.resx">
+      <DependentUpon>201909061549115_added-enum-to-both-customer-and-employee-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061556014_gave-enum-values.resx">
+      <DependentUpon>201909061556014_gave-enum-values.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061604364_changed-enum.resx">
+      <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

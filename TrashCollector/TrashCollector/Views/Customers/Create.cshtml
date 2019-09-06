@@ -66,7 +66,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.pickUpdate, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.pickUpdate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownList("pickUpdate", new SelectList(Enum.GetValues(typeof(DayOfWeek))),"Select trash pick up day",new { @class = "form-control" })           
             @Html.ValidationMessageFor(model => model.pickUpdate, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -29,19 +29,11 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(Customer customer)
+        public ActionResult Details(int id)
         {
-            if (customer.Id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            IEnumerable<Customer> customerInfo = db.Customers;
-            customerInfo = db.Customers.Where(c => c.Id == customer.Id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customerInfo);
+            var customerId = User.Identity.GetUserId();
+            var customerDetails = db.Customers.Where(c => c.ApplicationId.ToString() == customerId).SingleOrDefault();
+            return View(customerDetails);
         }
 
         // GET: Customers/Create

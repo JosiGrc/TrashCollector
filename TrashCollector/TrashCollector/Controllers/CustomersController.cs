@@ -23,22 +23,25 @@ namespace TrashCollector.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            var customerUserId = User.Identity.GetUserId();
+            var customerInfo = db.Customers.Where(c => c.ApplicationId.ToString() == customerUserId);
+            return View(customerInfo);
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Customer customer)
         {
-            if (id == null)
+            if (customer.Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
+            IEnumerable<Customer> customerInfo = db.Customers;
+            customerInfo = db.Customers.Where(c => c.Id == customer.Id);
             if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(customerInfo);
         }
 
         // GET: Customers/Create
@@ -119,13 +122,7 @@ namespace TrashCollector.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-        //POST: Customer/See Balance
-        //public ActionResult SeeBalance(int id)
-        //{
-        //    return View(db.Customers.);
-        //}
+ 
         protected override void Dispose(bool disposing)
         {
             if (disposing)

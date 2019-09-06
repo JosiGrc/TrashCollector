@@ -23,13 +23,6 @@ namespace TrashCollector.Models
         [Display(Name = "Zipcode")]
         public int zipcode { get; set; }
 
-        [Display(Name = "Balance")]
-
-        public double balance { get; set; }
-
-        [Display(Name = "Pickup Date")]
-        public int pickUpdate { get; set; }
-
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

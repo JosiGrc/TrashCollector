@@ -29,7 +29,7 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             var customerId = User.Identity.GetUserId();
             var customerDetails = db.Customers.Where(c => c.ApplicationId.ToString() == customerId).SingleOrDefault();
@@ -46,7 +46,7 @@ namespace TrashCollector.Controllers
   
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,ApplicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace TrashCollector.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,ApplicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {

@@ -38,7 +38,7 @@ namespace TrashCollector.Models
         public double balance { get; set; }
 
         [Display(Name = "Pickup Date")]
-        public int pickUpdate { get; set; }
+        public string pickUpdate { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }

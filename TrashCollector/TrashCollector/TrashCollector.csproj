@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201909061237004_deleted-balance-and-pickupdate-from-employee-model.Designer.cs">
       <DependentUpon>201909061237004_deleted-balance-and-pickupdate-from-employee-model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.cs" />
+    <Compile Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.Designer.cs">
+      <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909061237004_deleted-balance-and-pickupdate-from-employee-model.resx">
       <DependentUpon>201909061237004_deleted-balance-and-pickupdate-from-employee-model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.resx">
+      <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

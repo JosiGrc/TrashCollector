@@ -49,7 +49,7 @@ namespace TrashCollector.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,zipcode")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,zipcode,")] Employee employee)
         {
             if (ModelState.IsValid)
             {

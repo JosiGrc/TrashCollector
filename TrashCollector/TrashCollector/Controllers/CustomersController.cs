@@ -18,8 +18,6 @@ namespace TrashCollector.Controllers
 
         //ctor
 
-
-
         //methods
 
         // GET: Customers
@@ -50,8 +48,7 @@ namespace TrashCollector.Controllers
         }
 
         // POST: Customers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+  
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email")] Customer customer)
@@ -83,8 +80,7 @@ namespace TrashCollector.Controllers
         }
 
         // POST: Customers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email")] Customer customer)
@@ -124,6 +120,12 @@ namespace TrashCollector.Controllers
             return RedirectToAction("Index");
         }
 
+
+        //POST: Customer/See Balance
+        //public ActionResult SeeBalance(int id)
+        //{
+        //    return View(db.Customers.);
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)

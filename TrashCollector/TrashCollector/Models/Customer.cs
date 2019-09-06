@@ -14,7 +14,7 @@ namespace TrashCollector.Models
         //Ctor
         [Key]
        
-        public int Id { get; set; }
+        public int Id { get; set; }//add balance that would be a double
 
         [Display( Name = "First Name")]
         public string firstName { get; set; }
@@ -33,6 +33,13 @@ namespace TrashCollector.Models
 
         [Display(Name = "E-Mail")]
         public string email { get; set; }
+
+        [Display(Name = "Balance")]
+        public double balance { get; set; }
+
+        [Display(Name = "Pickup Date")]
+        public int pickUpdate { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

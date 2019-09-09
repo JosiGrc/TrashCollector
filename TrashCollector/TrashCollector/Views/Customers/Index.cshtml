@@ -33,6 +33,9 @@
         <th>
             @Html.DisplayNameFor(model => model.pickUpdate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.suspendPickup)
+        </th>
         <th></th>
     </tr>
 
@@ -61,6 +64,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.pickUpdate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.suspendPickup)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

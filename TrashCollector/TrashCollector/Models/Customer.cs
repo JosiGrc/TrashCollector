@@ -40,6 +40,9 @@ namespace TrashCollector.Models
         [Display(Name = "Pickup Date")]
         public string pickUpdate { get; set; }
 
+        [Display(Name = "Suspend Pickup Date")]
+        public string suspendPickup { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

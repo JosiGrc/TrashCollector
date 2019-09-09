@@ -219,6 +219,14 @@
     <Compile Include="Migrations\201909061604364_changed-enum.Designer.cs">
       <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.cs" />
+    <Compile Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.Designer.cs">
+      <DependentUpon>201909092106438_added-suspend-migration-to-customer-model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909092121378_made-new-property-an-int.cs" />
+    <Compile Include="Migrations\201909092121378_made-new-property-an-int.Designer.cs">
+      <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -345,6 +353,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909061604364_changed-enum.resx">
       <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.resx">
+      <DependentUpon>201909092106438_added-suspend-migration-to-customer-model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909092121378_made-new-property-an-int.resx">
+      <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

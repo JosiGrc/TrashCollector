@@ -114,6 +114,11 @@ namespace TrashCollector.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public void SuspendPickup()
+        {
+
+        }
  
         protected override void Dispose(bool disposing)
         {

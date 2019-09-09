@@ -4,7 +4,7 @@
     ViewBag.Title = "PickUps";
 }
 
-<h2>Details</h2>
+<h2>Pickups</h2>
 
 <div>
     <h4>Customer</h4>
@@ -18,8 +18,14 @@
             @Html.DisplayNameFor(model => model.zipcode)
         </dt>
 
+        <p>
+            @Html.ActionLink("Confirm Pickup", "ConfirmPickup")
+        </p>
+
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+@*<p>
+    @Html.ActionLink("Back to Employee info", "Index")
+</p>*@

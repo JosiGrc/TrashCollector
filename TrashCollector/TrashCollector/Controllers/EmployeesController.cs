@@ -120,14 +120,27 @@ namespace TrashCollector.Controllers
             return RedirectToAction("Index");
         }
 
-        //public ActionResult ConfirmPickup()
-        //{
+        public bool ConfirmPickup(Customer customer)
+        {
+            var gettingPickups = false;
+            var pickupConfirmed = db.Customers.Where(c => c.Id == customer.Id).SingleOrDefault();
+            gettingPickups = true;
+            return gettingPickups;
+        }
 
-        //}
+        public void  ChargingCustomer(bool gettingPickups, Customer customer)
+        {
+            if (gettingPickups == true)
+            {
+                var chargedMoney = customer.balance + 50.55;
+                db.SaveChanges();
+            }
+
+        }
 
         public ActionResult TodaysPickUps(Employee employee)
         {
-            var customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode && c.pickUpdate == today).ToList();
+            var customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
             return RedirectToAction("PickUps");
         }
 

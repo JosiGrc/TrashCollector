@@ -120,28 +120,32 @@ namespace TrashCollector.Controllers
             return RedirectToAction("Index");
         }
 
-        public bool ConfirmPickup(Customer customer)
+        public ActionResult ConfirmPickup(Customer customer)
         {
             var gettingPickups = false;
             var pickupConfirmed = db.Customers.Where(c => c.Id == customer.Id).SingleOrDefault();
             gettingPickups = true;
-            return gettingPickups;
+            ChargingCustomer(true, customer.Id);
+            return RedirectToAction("Pickups");
         }
 
-        public void  ChargingCustomer(bool gettingPickups, Customer customer)
+        public void ChargingCustomer(bool? gettingPickups, int? id)
         {
             if (gettingPickups == true)
             {
-                var chargedMoney = customer.balance + 50.55;
+                Customer customer = db.Customers.Find(id);
+                customer.balance += 50.55;
                 db.SaveChanges();
             }
-
+            // return RedirectToAction("PickUps");
         }
 
-        public ActionResult TodaysPickUps(Employee employee)
+        public ActionResult PickUps([Bind(Include = "Id,firstName,lastName,zipcode,ApplicationId")] int? id)
         {
-            var customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
-            return RedirectToAction("PickUps");
+            Employee employee = db.Employees.Find(id);
+            employee = db.Employees.Where(e => e.Id == employee.Id).Single();
+            List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
+            return View (customersInArea);
         }
 
         protected override void Dispose(bool disposing)

@@ -6,26 +6,32 @@
 
 <h2>Pickups</h2>
 
-<div>
-    <h4>Customer</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+<table class="table">
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.address)
-        </dt>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.zipcode)
-        </dt>
+        </th>
+        <th></th>
+    </tr>
 
-        <p>
-            @Html.ActionLink("Confirm Pickup", "ConfirmPickup")
-        </p>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zipcode)
+            </td>
+            <td>
+                @Html.ActionLink("Confirm Pickup", "ConfirmPickup", new { id = item.Id })
+                @Html.ActionLink("Go back", "Index", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
-    </dl>
-</div>
+</table>
 
-
-@*<p>
-    @Html.ActionLink("Back to Employee info", "Index")
-</p>*@

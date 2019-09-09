@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TrashCollector.Models.Customer>
+
+@{
+    ViewBag.Title = "PickUps";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zipcode)
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

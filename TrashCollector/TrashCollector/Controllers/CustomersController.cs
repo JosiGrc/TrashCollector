@@ -46,7 +46,7 @@ namespace TrashCollector.Controllers
   
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,ApplicationId")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate")] Customer customer)
         {
             if (ModelState.IsValid)
             {

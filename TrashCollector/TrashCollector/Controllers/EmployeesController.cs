@@ -23,7 +23,9 @@ namespace TrashCollector.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Employees.ToList());
+            var employeeUserId = User.Identity.GetUserId();
+            var employeeInfo = db.Employees.Where(c => c.ApplicationId.ToString() == employeeUserId);
+            return View(employeeInfo);
         }
 
         // GET: Employees/Details/5
@@ -49,7 +51,7 @@ namespace TrashCollector.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,zipcode,")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,zipcode,ApplicationId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +83,7 @@ namespace TrashCollector.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,zipcode")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,zipcode,ApplicationId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -116,6 +118,17 @@ namespace TrashCollector.Controllers
             db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //public ActionResult ConfirmPickup()
+        //{
+
+        //}
+
+        public ActionResult TodaysPickUps(Employee employee)
+        {
+            var customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode && c.pickUpdate == today).ToList();
+            return RedirectToAction("PickUps");
         }
 
         protected override void Dispose(bool disposing)

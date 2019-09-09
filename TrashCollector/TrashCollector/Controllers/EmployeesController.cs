@@ -126,7 +126,7 @@ namespace TrashCollector.Controllers
             var pickupConfirmed = db.Customers.Where(c => c.Id == customer.Id).SingleOrDefault();
             gettingPickups = true;
             ChargingCustomer(true, customer.Id);
-            return RedirectToAction("Pickups");
+            return View("Pickups");
         }
 
         public void ChargingCustomer(bool? gettingPickups, int? id)
@@ -140,7 +140,7 @@ namespace TrashCollector.Controllers
             // return RedirectToAction("PickUps");
         }
 
-        public ActionResult PickUps([Bind(Include = "Id,firstName,lastName,zipcode,ApplicationId")] int? id)
+        public ActionResult PickUps(int? id)
         {
             Employee employee = db.Employees.Find(id);
             employee = db.Employees.Where(e => e.Id == employee.Id).Single();

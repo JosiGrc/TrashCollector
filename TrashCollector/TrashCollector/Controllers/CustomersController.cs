@@ -115,11 +115,11 @@ namespace TrashCollector.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult PickupEditing()
+        public ActionResult EditPickups()
         {
             var customerId = User.Identity.GetUserId();
             var customerDetails = db.Customers.Where(c => c.ApplicationId.ToString() == customerId).SingleOrDefault();
-            return RedirectToAction("Edit");
+            return View("EditPickups");
         }
 
         protected override void Dispose(bool disposing)

@@ -27,7 +27,7 @@
                 @Html.DisplayFor(modelItem => item.zipcode)
             </td>
             <td>
-                @Html.ActionLink("Confirm Pickup", "ConfirmPickup", new { id = item.Id })
+                @Html.ActionLink("Confirm Pickup", "ConfirmPickup", new { id = item.Id }) |
                 @Html.ActionLink("Go back", "Index", new { id = item.Id })
             </td>
         </tr>

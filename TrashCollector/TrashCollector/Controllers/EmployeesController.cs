@@ -144,12 +144,19 @@ namespace TrashCollector.Controllers
         {
             if (id == null)
             {
-                var gettingId = db.Employees.Find(id);
+                Employee employee = db.Employees.Find(id);
+                employee = db.Employees.Where(e => e.Id == employee.Id).Single();
+                List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
+                return View(customersInArea);
             }
-            Employee employee = db.Employees.Find(id);
-            employee = db.Employees.Where(e => e.Id == employee.Id).Single();
-            List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
-            return View (customersInArea);
+            else
+            {
+                Employee employee = db.Employees.Find(id);
+                employee = db.Employees.Where(e => e.Id == employee.Id).Single();
+                List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
+                return View(customersInArea);
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

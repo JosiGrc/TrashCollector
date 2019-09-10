@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201909092121378_made-new-property-an-int.Designer.cs">
       <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.cs" />
+    <Compile Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.Designer.cs">
+      <DependentUpon>201909100027250_added-an-additinal-colomn-to-customer-db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -359,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909092121378_made-new-property-an-int.resx">
       <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.resx">
+      <DependentUpon>201909100027250_added-an-additinal-colomn-to-customer-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

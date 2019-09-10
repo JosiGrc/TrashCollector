@@ -153,7 +153,7 @@ namespace TrashCollector.Controllers
             {
                 Employee employee = db.Employees.Find(id);
                 employee = db.Employees.Where(e => e.Id == employee.Id).Single();
-                List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
+                List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();
                 return View(customersInArea);
             }
             

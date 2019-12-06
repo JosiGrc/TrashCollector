@@ -53,9 +53,10 @@ namespace TrashCollector.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,firstName,lastName,zipcode,ApplicationId")] Employee employee)
         {
+            employee.ApplicationId = User.Identity.GetUserId();
+
             if (ModelState.IsValid)
             {
-                employee.ApplicationId = User.Identity.GetUserId();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");

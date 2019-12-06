@@ -175,62 +175,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909032045149_InitialMigration.cs" />
-    <Compile Include="Migrations\201909032045149_InitialMigration.Designer.cs">
-      <DependentUpon>201909032045149_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909041537241_SecondaryMigration.cs" />
-    <Compile Include="Migrations\201909041537241_SecondaryMigration.Designer.cs">
-      <DependentUpon>201909041537241_SecondaryMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909041851110_thirdmigration.cs" />
-    <Compile Include="Migrations\201909041851110_thirdmigration.Designer.cs">
-      <DependentUpon>201909041851110_thirdmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909042008563_FourthMigration.cs" />
-    <Compile Include="Migrations\201909042008563_FourthMigration.Designer.cs">
-      <DependentUpon>201909042008563_FourthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.cs" />
-    <Compile Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.Designer.cs">
-      <DependentUpon>201909051931394_adding-foreignkey-to-both-tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061225414_actually-added-balance-and-pickupdate-to-customer=-models.cs" />
-    <Compile Include="Migrations\201909061225414_actually-added-balance-and-pickupdate-to-customer=-models.Designer.cs">
-      <DependentUpon>201909061225414_actually-added-balance-and-pickupdate-to-customer=-models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061237004_deleted-balance-and-pickupdate-from-employee-model.cs" />
-    <Compile Include="Migrations\201909061237004_deleted-balance-and-pickupdate-from-employee-model.Designer.cs">
-      <DependentUpon>201909061237004_deleted-balance-and-pickupdate-from-employee-model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.cs" />
-    <Compile Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.Designer.cs">
-      <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.cs" />
-    <Compile Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.Designer.cs">
-      <DependentUpon>201909061549115_added-enum-to-both-customer-and-employee-table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061556014_gave-enum-values.cs" />
-    <Compile Include="Migrations\201909061556014_gave-enum-values.Designer.cs">
-      <DependentUpon>201909061556014_gave-enum-values.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909061604364_changed-enum.cs" />
-    <Compile Include="Migrations\201909061604364_changed-enum.Designer.cs">
-      <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.cs" />
-    <Compile Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.Designer.cs">
-      <DependentUpon>201909092106438_added-suspend-migration-to-customer-model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909092121378_made-new-property-an-int.cs" />
-    <Compile Include="Migrations\201909092121378_made-new-property-an-int.Designer.cs">
-      <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.cs" />
-    <Compile Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.Designer.cs">
-      <DependentUpon>201909100027250_added-an-additinal-colomn-to-customer-db.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -324,50 +268,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909032045149_InitialMigration.resx">
-      <DependentUpon>201909032045149_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909041537241_SecondaryMigration.resx">
-      <DependentUpon>201909041537241_SecondaryMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909041851110_thirdmigration.resx">
-      <DependentUpon>201909041851110_thirdmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909042008563_FourthMigration.resx">
-      <DependentUpon>201909042008563_FourthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909051931394_adding-foreignkey-to-both-tables.resx">
-      <DependentUpon>201909051931394_adding-foreignkey-to-both-tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061225414_actually-added-balance-and-pickupdate-to-customer=-models.resx">
-      <DependentUpon>201909061225414_actually-added-balance-and-pickupdate-to-customer=-models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061237004_deleted-balance-and-pickupdate-from-employee-model.resx">
-      <DependentUpon>201909061237004_deleted-balance-and-pickupdate-from-employee-model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061511482_changed-pickupdate-fromint-to-string.resx">
-      <DependentUpon>201909061511482_changed-pickupdate-fromint-to-string.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061549115_added-enum-to-both-customer-and-employee-table.resx">
-      <DependentUpon>201909061549115_added-enum-to-both-customer-and-employee-table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061556014_gave-enum-values.resx">
-      <DependentUpon>201909061556014_gave-enum-values.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909061604364_changed-enum.resx">
-      <DependentUpon>201909061604364_changed-enum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909092106438_added-suspend-migration-to-customer-model.resx">
-      <DependentUpon>201909092106438_added-suspend-migration-to-customer-model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909092121378_made-new-property-an-int.resx">
-      <DependentUpon>201909092121378_made-new-property-an-int.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909100027250_added-an-additinal-colomn-to-customer-db.resx">
-      <DependentUpon>201909100027250_added-an-additinal-colomn-to-customer-db.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -25,7 +25,7 @@ namespace TrashCollector.Controllers
         {
             var customerUserId = User.Identity.GetUserId();
             var customerInfo = db.Customers.Where(c => c.ApplicationId.ToString() == customerUserId);
-            return View(customerInfo);
+            return View(customerInfo);          
         }
 
         // GET: Customers/Details/5

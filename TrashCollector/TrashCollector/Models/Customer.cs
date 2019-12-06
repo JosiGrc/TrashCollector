@@ -9,12 +9,11 @@ namespace TrashCollector.Models
 {
     public class Customer
     {
-        //Variables
 
         //Ctor
         [Key]
        
-        public int Id { get; set; }//add balance that would be a double
+        public int Id { get; set; }
 
         [Display( Name = "First Name")]
         public string firstName { get; set; }
@@ -41,16 +40,15 @@ namespace TrashCollector.Models
         public string pickUpdate { get; set; }
 
         [Display(Name = "Suspend Pickup Date")]
-        public string suspendPickup { get; set; }
+        public bool suspendPickup { get; set; }
 
         [Display(Name = "Additional Pickups")]
-        public string additionalPickup { get; set; }
+        public bool additionalPickup { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
         public enum DayOfWeek { };
-
 
 
         //Methods

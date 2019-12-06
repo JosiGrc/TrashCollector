@@ -160,7 +160,7 @@ namespace TrashCollector.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //take uswer to specific create page depending on the selected role
+                    //take user to specific create page depending on the selected role
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
 

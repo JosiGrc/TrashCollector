@@ -23,6 +23,10 @@ namespace TrashCollector.Models
 
         [Display(Name = "Address")]
         public string address { get; set; }
+        public double longitute { get; set; }
+        public double latitude { get; set; }
+        [Display(Name = "City")]
+        public string city { get; set; }
 
         [Display(Name = "Zipcode")]
         public int zipcode { get; set; }
@@ -30,20 +34,23 @@ namespace TrashCollector.Models
         [Display(Name = "State")]
         public string state { get; set; }
 
-        [Display(Name = "E-Mail")]
-        public string email { get; set; }
-
         [Display(Name = "Balance")]
         public double balance { get; set; }
 
         [Display(Name = "Pickup Date")]
         public string pickUpdate { get; set; }
 
-        [Display(Name = "Suspend Pickup Date")]
-        public bool suspendPickup { get; set; }
+        [Display(Name = "Suspend Pickup Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime? suspendPickupStart { get; set; }
+
+        [Display(Name = "Suspend Pickup End Date")]
+        [DataType(DataType.Date)]
+        public DateTime? suspendPickupEnd { get; set; }
 
         [Display(Name = "Additional Pickups")]
-        public bool additionalPickup { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? additionalPickup { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }

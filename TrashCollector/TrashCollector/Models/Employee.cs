@@ -29,8 +29,6 @@ namespace TrashCollector.Models
         public enum daysOfTheWeek { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
 
 
-        //ctor
-
-        //methods
+        
     }
 }

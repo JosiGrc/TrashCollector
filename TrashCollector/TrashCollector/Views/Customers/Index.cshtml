@@ -25,16 +25,16 @@
             @Html.DisplayNameFor(model => model.state)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.balance)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.pickUpdate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.suspendPickup)
+            @Html.DisplayNameFor(model => model.suspendPickupStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.suspendPickupEnd)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.additionalPickup)
@@ -60,23 +60,22 @@
         @Html.DisplayFor(modelItem => item.state)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.email)
-    </td>
-    <td>
         @Html.DisplayFor(modelItem => item.balance)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.pickUpdate)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.suspendPickup)
+        @Html.DisplayFor(modelItem => item.suspendPickupStart)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.suspendPickupEnd)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.additionalPickup)
     </td>
     <td>
         @Html.ActionLink("Edit Pickups", "EditPickups", new { id = item.Id }) |
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
     </td>

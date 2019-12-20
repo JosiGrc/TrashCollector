@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,6 +36,20 @@ namespace TrashCollector.Controllers
             var customerDetails = db.Customers.Where(c => c.ApplicationId.ToString() == customerId).SingleOrDefault();
             return View(customerDetails);
         }
+        
+        public string GoogleFormatAddress(Customer customer)
+        {
+            string googleFormatAddress = customer.address + "," + customer.city + "," + customer.state + "," + customer.zipcode + ",USA";
+            return googleFormatAddress;
+        }
+
+        public GeoCode GeoLocate(string address)
+        {
+            var requestUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={address}&key=AIzaSyAjvSmZAIx5ytoXJmdVGlzqj8M76zlWKWs";
+            var result = new WebClient().DownloadString(requestUrl);
+            GeoCode geocode = JsonConvert.DeserializeObject<GeoCode>(result);
+            return geocode;
+        }
 
         // GET: Customers/Create
         public ActionResult Create()
@@ -46,11 +61,16 @@ namespace TrashCollector.Controllers
   
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,suspendPickup,additionalPickup")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,address,zipcode,,city,state,pickUpdate,suspendPickupStart, suspendPickupEnd,additionalPickup,longitute,latitude")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 customer.ApplicationId = User.Identity.GetUserId();
+
+                string customerAddress = GoogleFormatAddress(customer);
+                var userLocation = GeoLocate(customerAddress);
+                customer.longitute = userLocation.outcome[0].geometry.location.lng;//spomething here is not the instance of an object
+                customer.latitude = userLocation.outcome[0].geometry.location.lat;
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +98,7 @@ namespace TrashCollector.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,suspendPickup,additionalPickup,ApplicationId")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,address,zipcode,state,email,pickUpdate,suspendPickupEnd, suspendPickUpStart,additionalPickup,ApplicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {

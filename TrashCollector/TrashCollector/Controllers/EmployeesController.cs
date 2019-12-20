@@ -146,7 +146,7 @@ namespace TrashCollector.Controllers
             if (id == null)
             {
                 Employee employee = db.Employees.Find(id);
-                employee = db.Employees.Where(e => e.Id == employee.Id).Single();
+                employee = db.Employees.Where(e => e.Id == employee.Id).Single();//non static metho requires a target
                 List<Customer> customersInArea = db.Customers.Where(c => c.zipcode == employee.zipcode).ToList();//add a day to the filter
                 return View(customersInArea);
             }
@@ -159,6 +159,17 @@ namespace TrashCollector.Controllers
             }
             
         }
+
+        public List<Customer> SameDayCustomers()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var loggedInEmployee = db.Employees.Where(e => e.ApplicationId.Equals(employeeId)).SingleOrDefault();
+            var today = DateTime.Now.DayOfWeek.ToString();
+            var todaysDate = DateTime.Now;
+            var customerZipcode = db.Customers.Where(c => c.zipcode == loggedInEmployee.zipcode && c.pickUpdate == today || c.additionalPickup == todaysDate).ToList();
+            return customerZipcode;
+        }
+
 
         protected override void Dispose(bool disposing)
         {
